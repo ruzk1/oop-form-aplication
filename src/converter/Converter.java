@@ -23,10 +23,10 @@ import static java.lang.Double.parseDouble;
  */
 class Converter extends JFrame {
 
-//РћР±СЉСЏРІР»РµРЅРёРµ СЃР»СѓС€Р°С‚РµР»РµР№
+//Объявление слушателей
 Handler event = new Handler();
 
-//РћР±СЉСЏРІР»РµРЅРёРµ СЃР»РѕС‘РІ(Layout)
+//Объявление слоёв(Layout)
 JPanel jPanelHeader, jPanelConvert, jPanelAnswer,jPanelFunctionButton, jPanelMain;
 JLabel jLabel1, jLabel2, jLabelAnswer, jLabel3, jLabel4, jLabelInfo;
 JTextField jTextField1;
@@ -36,9 +36,9 @@ JComboBox<String> jComboBox1;
 JComboBox<String> jComboBox2;
 
     Converter(){ 
-        super("РљРѕРЅРІРµСЂС‚РµСЂ");
+        super("Конвертер");
         this.setSize(1200, 600);
-        //РЎРѕР·РґР°РЅРёРµ СЃР»РѕС‘РІ(Layout) Рё РґСЂ РґР»СЏ РїР°РЅРµР»Рё.
+        //Создание слоёв(Layout) и др для панели.
         jPanelMain = new JPanel();
         jPanelMain.setBackground(new Color(255, 255, 255));
         jPanelHeader = new JPanel();
@@ -51,18 +51,18 @@ JComboBox<String> jComboBox2;
         jPanelFunctionButton.setBackground(new Color(255,255,255));
         jLabel1 = new JLabel("");
         jLabel2 = new JLabel("");
-        jLabel3 = new JLabel("РР· : ");
-        jLabel4 = new JLabel("Р’ : ");
-        jLabelAnswer = new JLabel("РћС‚РІРµС‚: ");
-        jButtonExit = new JButton("РќР°Р·Р°Рґ");
+        jLabel3 = new JLabel("Из : ");
+        jLabel4 = new JLabel("В : ");
+        jLabelAnswer = new JLabel("Ответ: ");
+        jButtonExit = new JButton("Назад");
         jButtonExit.setBackground(new Color(255,255,255));
-        jButtonAuthor = new JButton("РћР± Р°РІС‚РѕСЂРµ");
+        jButtonAuthor = new JButton("Об авторе");
         jButtonAuthor.setBackground(new Color(255,255,255));
-        jButtonAbout = new JButton("Рћ РїСЂРѕРіСЂР°РјРјРµ");
+        jButtonAbout = new JButton("О программе");
         jButtonAbout.setBackground(new Color(255,255,255));
-        jButtonClear = new JButton("РћС‡РёСЃС‚РёС‚СЊ");
+        jButtonClear = new JButton("Очистить");
         jButtonClear.setBackground(new Color(255,255,255));
-        jButtonConvert =new JButton("РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ");
+        jButtonConvert =new JButton("Конвертировать");
         jButtonConvert.setBackground(new Color(255,255,255));
         jTextField1 =new JTextField(5);
         jTextField1.setText("100");
@@ -70,46 +70,46 @@ JComboBox<String> jComboBox2;
         jComboBox1 = new JComboBox<>();
         jComboBox1.setBackground(new Color(255,255,255));
         jComboBox1.setEditable(true);
-        jComboBox1.addItem("Р’Р°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ");
-        jComboBox1.addItem("РљРёР»РѕРІР°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ");
-        jComboBox1.addItem("Р’Р°С‚С‚ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ");
-        jComboBox1.addItem("Р’Р°С‚С‚ РЅР° РєРІ. РґСЋР№Рј");
-        jComboBox1.addItem("Р”Р¶РѕСѓР»СЊ РІ СЃРµРєСѓРЅРґСѓ РЅР° РєРІ. РјРµС‚СЂ");
-        jComboBox1.addItem("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. РјРµС‚СЂ");
-        jComboBox1.addItem("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. С„СѓС‚");
-        jComboBox1.addItem("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ");
-        jComboBox1.addItem("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ");
-        jComboBox1.addItem("РљР°Р»РѕСЂРёСЏ (С‚РµСЂРј.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ");
+        jComboBox1.addItem("Ватт на кв. метр");
+        jComboBox1.addItem("Киловатт на кв. метр");
+        jComboBox1.addItem("Ватт на кв. сантиметр");
+        jComboBox1.addItem("Ватт на кв. дюйм");
+        jComboBox1.addItem("Джоуль в секунду на кв. метр");
+        jComboBox1.addItem("Килокалория (межд.) в час на кв. метр");
+        jComboBox1.addItem("Килокалория (межд.) в час на кв. фут");
+        jComboBox1.addItem("Калория (межд.) в минуту на кв. сантиметр");
+        jComboBox1.addItem("Калория (межд.) в час на кв. сантиметр");
+        jComboBox1.addItem("Калория (терм.) в минуту на кв. сантиметр");
 
         jComboBox2 = new JComboBox<>();
         jComboBox2.setBackground(new Color(255,255,255));
         jComboBox2.setEditable(true);
-        jComboBox2.addItem("Р’Р°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ");
-        jComboBox2.addItem("РљРёР»РѕРІР°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ");
-        jComboBox2.addItem("Р’Р°С‚С‚ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ");
-        jComboBox2.addItem("Р’Р°С‚С‚ РЅР° РєРІ. РґСЋР№Рј");
-        jComboBox2.addItem("Р”Р¶РѕСѓР»СЊ РІ СЃРµРєСѓРЅРґСѓ РЅР° РєРІ. РјРµС‚СЂ");
-        jComboBox2.addItem("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. РјРµС‚СЂ");
-        jComboBox2.addItem("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. С„СѓС‚");
-        jComboBox2.addItem("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ");
-        jComboBox2.addItem("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ");
-        jComboBox2.addItem("РљР°Р»РѕСЂРёСЏ (С‚РµСЂРј.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ");
+        jComboBox2.addItem("Ватт на кв. метр");
+        jComboBox2.addItem("Киловатт на кв. метр");
+        jComboBox2.addItem("Ватт на кв. сантиметр");
+        jComboBox2.addItem("Ватт на кв. дюйм");
+        jComboBox2.addItem("Джоуль в секунду на кв. метр");
+        jComboBox2.addItem("Килокалория (межд.) в час на кв. метр");
+        jComboBox2.addItem("Килокалория (межд.) в час на кв. фут");
+        jComboBox2.addItem("Калория (межд.) в минуту на кв. сантиметр");
+        jComboBox2.addItem("Калория (межд.) в час на кв. сантиметр");
+        jComboBox2.addItem("Калория (терм.) в минуту на кв. сантиметр");
 
         jLabelInfo = new JLabel("<html>"
-            + "<div style='text-align: justify; width:140px; margin-right:5px;'>РЎ РїРѕРјРѕС‰СЊСЋ РєРѕРЅРІРµСЂС‚РµСЂР° РјРѕР¶РЅРѕ Р±С‹СЃС‚СЂРѕ РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°С‚СЊ РѕРґРЅРё С„РёР·РёС‡РµСЃРєРёРµ РІРµР»РёС‡РёРЅС‹ РІ РґСЂСѓРіРёРµ</div>"
+            + "<div style='text-align: justify; width:140px; margin-right:5px;'>С помощью конвертера можно быстро преобразовывать одни физические величины в другие</div>"
             + "</html>");
-        //РЎРѕР·РґР°РЅРёРµ РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРѕР№ Рё РІРµСЂС‚РёРєР°Р»СЊРЅРѕР№ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё 
+        //Создание горизонтальной и вертикальной последовательности 
         Box vertical = Box.createVerticalBox();
         Box box = Box.createHorizontalBox();
         
-        //РџРµСЂРІР°СЏ СЃС‚СЂРѕРєР°
+        //Первая строка
         jPanelHeader.add(box);
         jPanelHeader.add(jButtonAbout);
         jPanelHeader.add(jButtonAuthor);
         jPanelHeader.add(jButtonExit);
         vertical.add(jPanelHeader);
         
-        //Р’С‚РѕСЂР°СЏ СЃС‚СЂРѕРєР°
+        //Вторая строка
         jPanelConvert.add(jLabelInfo);
         jPanelConvert.add(box);
         jPanelConvert.add(jLabel3);
@@ -121,31 +121,31 @@ JComboBox<String> jComboBox2;
         vertical.add(Box.createVerticalStrut(50));
         vertical.add(jPanelConvert);
         
-        //РўСЂРµС‚СЊСЏ СЃС‚СЂРѕРєР°
+        //Третья строка
         jPanelFunctionButton.add(jButtonConvert);
         jPanelFunctionButton.add(jButtonClear);
         vertical.add(Box.createVerticalStrut(50));
         vertical.add(jPanelFunctionButton);
         
-        //Р§РµС‚РІС‘СЂС‚Р°СЏ СЃС‚СЂРѕРєР°
+        //Четвёртая строка
         jPanelAnswer.add(box);
         jPanelAnswer.add(jLabelAnswer);
         jPanelAnswer.add(jLabel2);
         vertical.add(Box.createVerticalStrut(50));
         vertical.add(jPanelAnswer);
         
-        //Р”РѕР±Р°РІР»РµРЅРёСЏ РЅР° С„РѕСЂРјСѓ РєРѕРЅРµС‡РЅС‹Р№ СЃР»РѕР№(Layout)
+        //Добавления на форму конечный слой(Layout)
          this.add(jPanelMain,BorderLayout.CENTER);
          jPanelMain.add(vertical);
          
-        //Р”РѕР±Р°РІР»РµРЅРёРµ Р›РёСЃРµРЅРµСЂРѕРІ
+        //Добавление Лисенеров
         jButtonConvert.addActionListener(event);
         jButtonExit.addActionListener(event);
         jButtonClear.addActionListener(event);
         jButtonAuthor.addActionListener(event);
         jButtonAbout.addActionListener(event);
         
-        //Р—Р°РїСЂРµС‚ РІРІРѕРґР° Р±СѓРєРІ Рё С‚.Рґ. РІ РїРѕР»Рµ РґР»СЏ РІРІРѕРґР°
+        //Запрет ввода букв и т.д. в поле для ввода
         jTextField1.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -165,132 +165,132 @@ JComboBox<String> jComboBox2;
         });    
     }
     
-    //Р¤СѓРЅРєС†РёСЏ РґР»СЏ РєРѕРЅРІРµСЂС‚Р°С†РёРё
-     // var РїР°СЂР°РјРµС‚СЂ РєРѕС‚РѕСЂС‹Р№ РєРѕРЅРІРµСЂС‚РёСЂСѓРµРј
-     // ratio РєРѕСЌС„С„РёС†РёРµРЅС‚ РЅР° РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ СѓРјРЅРѕР¶РёС‚СЊ РІС‹Р±СЂР°РЅРЅС‹Р№ РїР°СЂР°РјРµС‚СЂ
+    //Функция для конвертации
+     // var параметр который конвертируем
+     // ratio коэффициент на который нужно умножить выбранный параметр
 
     double Convert (double var,double ratio)
     {
         return var * ratio;
     }
-    //РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃР»СѓС€Р°С‚РµР»РµР№
+    //Инициализация слушателей
     
     public class Handler implements ActionListener {
       @Override
         public void actionPerformed(ActionEvent e) {
           if(e.getSource()== jButtonConvert){
               try{
-        if(Objects.requireNonNull(jComboBox1.getSelectedItem()).toString().equals("Р’Р°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(Objects.requireNonNull(jComboBox1.getSelectedItem()).toString().equals("Ватт на кв. метр"))
             {
-              jLabel1.setText("Р’С‚/РјВІ");
+              jLabel1.setText("Вт/м?");
               jLabelInfo.setText("<html>"
-                      + "<div style='text-align: justify; width:140px; margin-right:5px;'>Р’Р°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ (Р’С‚/РјВІ) вЂ” РїСЂРѕРёР·РІРѕРґРЅР°СЏ РµРґРёРЅРёС†Р° РЎР РґР»СЏ РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РІР°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРёРЅ РІР°С‚С‚, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                      + "<div style='text-align: justify; width:140px; margin-right:5px;'>Ватт на квадратный метр (Вт/м?) — производная единица СИ для измерения плотности теплового потока, называемого также тепловой нагрузкой. По определению, ватт на квадратный метр — это тепловой поток в один ватт, проходящий через один квадратный метр площади, перпендикулярной к направлению потока.</div>"
                       + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљРёР»РѕРІР°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Киловатт на кв. метр"))
             {
-              jLabel1.setText("РєР’С‚/РјВІ");
+              jLabel1.setText("кВт/м?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>РљРёР»РѕРІР°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ (РєР’С‚/РјВІ) вЂ” РµРґРёРЅРёС†Р° РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№, РєСЂР°С‚РЅР°СЏ РїСЂРѕРёР·РІРѕРґРЅРѕР№ РµРґРёРЅРёС†Рµ РЎР РІР°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РІР°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРёРЅ РІР°С‚С‚, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Киловатт на квадратный метр (кВт/м?) — единица измерения плотности теплового потока, называемого также тепловой нагрузкой, кратная производной единице СИ ватт на квадратный метр. По определению, ватт на квадратный метр — это тепловой поток в один ватт, проходящий через один квадратный метр площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("Р’Р°С‚С‚ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Ватт на кв. сантиметр"))
             {
-              jLabel1.setText("Р’С‚/СЃРјВІ");
+              jLabel1.setText("Вт/см?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Р’Р°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ (Р’С‚/СЃРјВІ) вЂ” РµРґРёРЅРёС†Р° РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№, РєСЂР°С‚РЅР°СЏ РїСЂРѕРёР·РІРѕРґРЅРѕР№ РµРґРёРЅРёС†Рµ РЎР РІР°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РІР°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРёРЅ РІР°С‚С‚, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Ватт на квадратный сантиметр (Вт/см?) — единица измерения плотности теплового потока, называемого также тепловой нагрузкой, кратная производной единице СИ ватт на квадратный метр. По определению, ватт на квадратный метр — это тепловой поток в один ватт, проходящий через один квадратный метр площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("Р’Р°С‚С‚ РЅР° РєРІ. РґСЋР№Рј"))
+        if(jComboBox1.getSelectedItem().toString().equals("Ватт на кв. дюйм"))
             {
-              jLabel1.setText("Р’С‚/РґСЋР№РјВІ");
+              jLabel1.setText("Вт/дюйм?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Р’Р°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РґСЋР№Рј (Р’С‚/РґСЋР№РјВІ) вЂ” РЅРµРјРµС‚СЂРёС‡РµСЃРєР°СЏ РµРґРёРЅРёС†Р° РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РІР°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РґСЋР№Рј вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРёРЅ РІР°С‚С‚, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ РґСЋР№Рј РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Ватт на квадратный дюйм (Вт/дюйм?) — неметрическая единица измерения плотности теплового потока, называемого также тепловой нагрузкой. По определению, ватт на квадратный дюйм — это тепловой поток в один ватт, проходящий через один квадратный дюйм площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("Р”Р¶РѕСѓР»СЊ РІ СЃРµРєСѓРЅРґСѓ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Джоуль в секунду на кв. метр"))
             {
-              jLabel1.setText("Р”Р¶/СЃВ·РјВІ");
+              jLabel1.setText("Дж/с·м?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Р”Р¶РѕСѓР»СЊ РІ СЃРµРєСѓРЅРґСѓ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ (Р”Р¶/СЃВ·РјВІ) вЂ” РїСЂРѕРёР·РІРѕРґРЅР°СЏ РµРґРёРЅРёС†Р° РЎР РґР»СЏ РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РґР¶РѕСѓР»СЊ РІ СЃРµРєСѓРЅРґСѓ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРёРЅ РґР¶РѕСѓР»СЊ РІ СЃРµРєСѓРЅРґСѓ (РѕРґРёРЅ РІР°С‚С‚), РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Джоуль в секунду на квадратный метр (Дж/с·м?) — производная единица СИ для измерения плотности теплового потока, называемого также тепловой нагрузкой. По определению, джоуль в секунду на квадратный метр — это тепловой поток в один джоуль в секунду (один ватт), проходящий через один квадратный метр площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Килокалория (межд.) в час на кв. метр"))
             {
-              jLabel1.setText("РєРєР°Р»(Рњ)/С‡В·РјВІ");
+              jLabel1.setText("ккал(М)/ч·м?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>РњРµР¶РґСѓРЅР°СЂРѕРґРЅР°СЏ РєРёР»РѕРєР°Р»РѕСЂРёСЏ РІ С‡Р°СЃ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ (РєРєР°Р»(Рњ)/С‡В·РјВІ) вЂ” РјРµС‚СЂРёС‡РµСЃРєР°СЏ РµРґРёРЅРёС†Р° РґР»СЏ РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РєРёР»РѕРєР°Р»РѕСЂРёСЏ РІ С‡Р°СЃ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРЅСѓ РєРёР»РѕРєР°Р»РѕСЂРёСЋ РІ С‡Р°СЃ, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Международная килокалория в час на квадратный метр (ккал(М)/ч·м?) — метрическая единица для измерения плотности теплового потока, называемого также тепловой нагрузкой. По определению, килокалория в час на квадратный метр — это тепловой поток в одну килокалорию в час, проходящий через один квадратный метр площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. С„СѓС‚"))
+        if(jComboBox1.getSelectedItem().toString().equals("Килокалория (межд.) в час на кв. фут"))
             {
-              jLabel1.setText("РєРєР°Р»(Рњ)/С‡В·С„СѓС‚ВІ");
+              jLabel1.setText("ккал(М)/ч·фут?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>РњРµР¶РґСѓРЅР°СЂРѕРґРЅР°СЏ РєРёР»РѕРєР°Р»РѕСЂРёСЏ РІ С‡Р°СЃ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ С„СѓС‚ (РєРєР°Р»(Рњ)/С‡В·С„СѓС‚ВІ) вЂ” РµРґРёРЅРёС†Р° РІ Р°РјРµСЂРёРєР°РЅСЃРєРѕР№ Рё Р°РЅРіР»РёР№СЃРєРѕР№ С‚СЂР°РґРёС†РёРѕРЅРЅС‹С… СЃРёСЃС‚РµРјР°С… РјРµСЂ РґР»СЏ РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РєРёР»РѕРєР°Р»РѕСЂРёСЏ РІ С‡Р°СЃ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ С„СѓС‚ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРЅСѓ РєРёР»РѕРєР°Р»РѕСЂРёСЋ РІ С‡Р°СЃ, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ С„СѓС‚ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Международная килокалория в час на квадратный фут (ккал(М)/ч·фут?) — единица в американской и английской традиционных системах мер для измерения плотности теплового потока, называемого также тепловой нагрузкой. По определению, килокалория в час на квадратный фут — это тепловой поток в одну килокалорию в час, проходящий через один квадратный фут площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Калория (межд.) в минуту на кв. сантиметр"))
             {
-              jLabel1.setText("РєР°Р»(Рњ)/РјРёРЅВ·СЃРјВІ");
+              jLabel1.setText("кал(М)/мин·см?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>РњРµР¶РґСѓРЅР°СЂРѕРґРЅР°СЏ РєР°Р»РѕСЂРёСЏ РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ (РєР°Р»(Рњ)/РјРёРЅВ·СЃРјВІ) вЂ” РјРµС‚СЂРёС‡РµСЃРєР°СЏ РµРґРёРЅРёС†Р° РґР»СЏ РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РєР°Р»РѕСЂРёСЏ РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРЅСѓ РєР°Р»РѕСЂРёСЋ РІ РјРёРЅСѓС‚Сѓ, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Международная калория в минуту на квадратный сантиметр (кал(М)/мин·см?) — метрическая единица для измерения плотности теплового потока, называемого также тепловой нагрузкой. По определению, калория в минуту на квадратный сантиметр — это тепловой поток в одну калорию в минуту, проходящий через один квадратный сантиметр площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Калория (межд.) в час на кв. сантиметр"))
             {
-              jLabel1.setText("РєР°Р»(Рњ)/С‡В·СЃРјВІ");
+              jLabel1.setText("кал(М)/ч·см?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>РњРµР¶РґСѓРЅР°СЂРѕРґРЅР°СЏ РєР°Р»РѕСЂРёСЏ РІ С‡Р°СЃ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ (РєР°Р»(Рњ)/С‡В·СЃРјВІ) вЂ” РјРµС‚СЂРёС‡РµСЃРєР°СЏ РµРґРёРЅРёС†Р° РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РєР°Р»РѕСЂРёСЏ РІ С‡Р°СЃ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРЅСѓ РєР°Р»РѕСЂРёСЋ РІ С‡Р°СЃ, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Международная калория в час на квадратный сантиметр (кал(М)/ч·см?) — метрическая единица измерения плотности теплового потока, называемого также тепловой нагрузкой. По определению, калория в час на квадратный сантиметр — это тепловой поток в одну калорию в час, проходящий через один квадратный сантиметр площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (С‚РµСЂРј.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Калория (терм.) в минуту на кв. сантиметр"))
             {
-              jLabel1.setText("РєР°Р»(Рў)/РјРёРЅВ·СЃРјВІ");
+              jLabel1.setText("кал(Т)/мин·см?");
                 jLabelInfo.setText("<html>"
-                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>РўРµСЂРјРѕС…РёРјРёС‡РµСЃРєР°СЏ РєР°Р»РѕСЂРёСЏ РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ (РєР°Р»(Рў)/РјРёРЅВ·СЃРјВІ) вЂ” РјРµС‚СЂРёС‡РµСЃРєР°СЏ РµРґРёРЅРёС†Р° РґР»СЏ РёР·РјРµСЂРµРЅРёСЏ РїР»РѕС‚РЅРѕСЃС‚Рё С‚РµРїР»РѕРІРѕРіРѕ РїРѕС‚РѕРєР°, РЅР°Р·С‹РІР°РµРјРѕРіРѕ С‚Р°РєР¶Рµ С‚РµРїР»РѕРІРѕР№ РЅР°РіСЂСѓР·РєРѕР№. РџРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ, РєР°Р»РѕСЂРёСЏ РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ вЂ” СЌС‚Рѕ С‚РµРїР»РѕРІРѕР№ РїРѕС‚РѕРє РІ РѕРґРЅСѓ РєР°Р»РѕСЂРёСЋ РІ РјРёРЅСѓС‚Сѓ, РїСЂРѕС…РѕРґСЏС‰РёР№ С‡РµСЂРµР· РѕРґРёРЅ РєРІР°РґСЂР°С‚РЅС‹Р№ СЃР°РЅС‚РёРјРµС‚СЂ РїР»РѕС‰Р°РґРё, РїРµСЂРїРµРЅРґРёРєСѓР»СЏСЂРЅРѕР№ Рє РЅР°РїСЂР°РІР»РµРЅРёСЋ РїРѕС‚РѕРєР°.</div>"
+                        + "<div style='text-align: justify; width:140px; margin-right:5px;'>Термохимическая калория в минуту на квадратный сантиметр (кал(Т)/мин·см?) — метрическая единица для измерения плотности теплового потока, называемого также тепловой нагрузкой. По определению, калория в минуту на квадратный сантиметр — это тепловой поток в одну калорию в минуту, проходящий через один квадратный сантиметр площади, перпендикулярной к направлению потока.</div>"
                         + "</html>");
             }
-        if(Objects.requireNonNull(jComboBox2.getSelectedItem()).toString().equals("Р’Р°С‚С‚ РЅР° РєРІР°РґСЂР°С‚РЅС‹Р№ РјРµС‚СЂ"))
+        if(Objects.requireNonNull(jComboBox2.getSelectedItem()).toString().equals("Ватт на квадратный метр"))
             {
               jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("РљРёР»РѕРІР°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox2.getSelectedItem().toString().equals("Киловатт на кв. метр"))
             {
               jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("Р’Р°С‚С‚ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox2.getSelectedItem().toString().equals("Ватт на кв. сантиметр"))
             {
                jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("Р’Р°С‚С‚ РЅР° РєРІ. РґСЋР№Рј"))
+        if(jComboBox2.getSelectedItem().toString().equals("Ватт на кв. дюйм"))
             {
               jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("Р”Р¶РѕСѓР»СЊ РІ СЃРµРєСѓРЅРґСѓ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox2.getSelectedItem().toString().equals("Джоуль в секунду на кв. метр"))
             {
               jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox2.getSelectedItem().toString().equals("Килокалория (межд.) в час на кв. метр"))
             {
               jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. С„СѓС‚"))
+        if(jComboBox2.getSelectedItem().toString().equals("Килокалория (межд.) в час на кв. фут"))
             {
               jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox2.getSelectedItem().toString().equals("Калория (межд.) в минуту на кв. сантиметр"))
             {
               jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox2.getSelectedItem().toString().equals("Калория (межд.) в час на кв. сантиметр"))
             {
               jLabel2.setText(".");
             }
-        if(jComboBox2.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (С‚РµСЂРј.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox2.getSelectedItem().toString().equals("Калория (терм.) в минуту на кв. сантиметр"))
             {
               jLabel2.setText(".");
             }
-//РњР°СЃСЃРёРІ РґР»СЏ РєРѕРЅРІРµСЂС‚Р°С†РёРё
+//Массив для конвертации
 
         double [][] coef = new double[][]
                 {   
@@ -305,61 +305,61 @@ JComboBox<String> jComboBox2;
                     new double [] {11.6300000008,0.0116300000008,0.00116300000008,0.0075032107947,11.6300000008,10.00000000116,0.9290303996263,0.01666666666589,1,0.01667782026888},
                     new double [] {697.3333333314,0.6973333333314,0.06973333333314,0.4498915729834,697.3333333314,599.5987389206,55.70454559702,0.9993312313716,59.95987388509,1}
                 };
-        //РєРѕРЅРІРµСЂС‚Р°С†РёСЏ        
-        if(jComboBox1.getSelectedItem().toString().equals("Р’Р°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ"))
+        //конвертация        
+        if(jComboBox1.getSelectedItem().toString().equals("Ватт на кв. метр"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[0][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[0][jComboBox2.getSelectedIndex()]));
               
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљРёР»РѕРІР°С‚С‚ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Киловатт на кв. метр"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[1][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[1][jComboBox2.getSelectedIndex()]));
             }
-        if(jComboBox1.getSelectedItem().toString().equals("Р’Р°С‚С‚ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Ватт на кв. сантиметр"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[2][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[2][jComboBox2.getSelectedIndex()]));
             }
-        if(jComboBox1.getSelectedItem().toString().equals("Р’Р°С‚С‚ РЅР° РєРІ. РґСЋР№Рј"))
+        if(jComboBox1.getSelectedItem().toString().equals("Ватт на кв. дюйм"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[3][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[3][jComboBox2.getSelectedIndex()]));
             }
-        if(jComboBox1.getSelectedItem().toString().equals("Р”Р¶РѕСѓР»СЊ РІ СЃРµРєСѓРЅРґСѓ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Джоуль в секунду на кв. метр"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[4][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[4][jComboBox2.getSelectedIndex()]));
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. РјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Килокалория (межд.) в час на кв. метр"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[5][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[5][jComboBox2.getSelectedIndex()]));
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљРёР»РѕРєР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. С„СѓС‚"))
+        if(jComboBox1.getSelectedItem().toString().equals("Килокалория (межд.) в час на кв. фут"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[6][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[6][jComboBox2.getSelectedIndex()]));
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Калория (межд.) в минуту на кв. сантиметр"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[7][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[7][jComboBox2.getSelectedIndex()]));
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (РјРµР¶Рґ.) РІ С‡Р°СЃ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Калория (межд.) в час на кв. сантиметр"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[8][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[8][jComboBox2.getSelectedIndex()]));
             }
-        if(jComboBox1.getSelectedItem().toString().equals("РљР°Р»РѕСЂРёСЏ (С‚РµСЂРј.) РІ РјРёРЅСѓС‚Сѓ РЅР° РєРІ. СЃР°РЅС‚РёРјРµС‚СЂ"))
+        if(jComboBox1.getSelectedItem().toString().equals("Калория (терм.) в минуту на кв. сантиметр"))
             {
-              jLabelAnswer.setText("РћС‚РІРµС‚: "+ Convert(parseDouble(jTextField1.getText()),coef[9][jComboBox2.getSelectedIndex()]));
+              jLabelAnswer.setText("Ответ: "+ Convert(parseDouble(jTextField1.getText()),coef[9][jComboBox2.getSelectedIndex()]));
             }
               }
-              //Р’СЃРїР»С‹РІР°СЋС‰РµРµ РѕРєРЅРѕ РїСЂРё РЅРµ РІРІРѕРґРµ Р·РЅР°С‡РµРЅРёСЏ 
+              //Всплывающее окно при не вводе значения 
                           catch(NumberFormatException p){
                  JFrame frame = new JFrame("Show Message Box");
                  jOptionPaneMessage = new JOptionPane();
-                 JOptionPane.showMessageDialog(frame, "Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ");
+                 JOptionPane.showMessageDialog(frame, "Введите значение");
                  
-                 jLabelAnswer.setText("РћС€РёР±РєР°");
+                 jLabelAnswer.setText("Ошибка");
               }
           }
-          //Р’С‹С…РѕРґ РЅР° РЅР°С‡Р°Р»СЊРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ
+          //Выход на начальную страницу
           if(e.getSource()== jButtonExit){
-                HomePage f = new HomePage ("РљРѕРЅРІРµСЂС‚РµСЂ");
+                HomePage f = new HomePage ("Конвертер");
                 f.setVisible(true);
                 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 f.setSize(450, 500);
@@ -367,14 +367,14 @@ JComboBox<String> jComboBox2;
                 f.setLocationRelativeTo(null);
                 dispose();  
           }
-          //РћС‡РёСЃС‚РєР° РїРѕР»РµР№
+          //Очистка полей
           if(e.getSource()== jButtonClear){
             jTextField1.setText("");
-            jLabelAnswer.setText("РћС‚РІРµС‚: ");
+            jLabelAnswer.setText("Ответ: ");
             jLabel1.setText("");
             jLabel2.setText("");
             jLabelInfo = new JLabel("<html>"
-                    + "<div style='text-align: justify; width:140px; margin-right:5px;'>РЎ РїРѕРјРѕС‰СЊСЋ РєРѕРЅРІРµСЂС‚РµСЂР° РјРѕР¶РЅРѕ Р±С‹СЃС‚СЂРѕ РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°С‚СЊ РѕРґРЅРё С„РёР·РёС‡РµСЃРєРёРµ РІРµР»РёС‡РёРЅС‹ РІ РґСЂСѓРіРёРµ</div>"
+                    + "<div style='text-align: justify; width:140px; margin-right:5px;'>С помощью конвертера можно быстро преобразовывать одни физические величины в другие</div>"
                     + "</html>");
           }
            if(e.getSource()== jButtonAuthor){

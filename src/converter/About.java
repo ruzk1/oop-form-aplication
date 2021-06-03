@@ -11,21 +11,21 @@ public class About extends JFrame {
    Handler event = new Handler();
 
     About(){
-        //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
-        super("Рћ РїСЂРѕРіСЂР°РјРјРµ");
+        //Конструктор
+        super("О программе");
         this.setSize(600, 500);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        jButtonReturn = new JButton("РќР°Р·Р°Рґ");
+        jButtonReturn = new JButton("Назад");
         jButtonReturn.setBackground(new Color(255,255,255));
-        jLabel1 = new JLabel("<html><div style='text-align:center'>Рћ РїСЂРѕРіСЂР°РјРјРµ"
-                + "<div style='text-align: center; padding-top: 40px'>Р”Р°РЅРЅРѕРµ РїСЂРёР»РѕР¶РµРЅРёСЏ СЃРѕР·РґР°РЅРѕ РґР»СЏ РєРѕРЅРІРµСЂС‚Р°С†РёРё РµРґРёРЅРёС† РёР·РјРµСЂРµРЅРёСЏ, РІ РґР°РЅРЅРѕРј СЃР»СѓС‡Р°Рµ РµРґРёРЅРёС† РёР·РјРµСЂРµРЅРёСЏ РїРѕС‚РѕРєР° С‚РµРїР»Р°"
+        jLabel1 = new JLabel("<html><div style='text-align:center'>О программе"
+                + "<div style='text-align: center; padding-top: 40px'>Данное приложения создано для конвертации единиц измерения, в данном случае единиц измерения потока тепла"
                 + "</html>");
         jLabel1.setFont(new Font("arial", Font.BOLD, 18));
         add(jButtonReturn,BorderLayout.SOUTH);
         add(jLabel1,BorderLayout.CENTER);
-        //Р”РѕР±Р°РІР»РµРЅРёРµ Р›РёСЃРµРЅРµСЂРѕРІ
+        //Добавление Лисенеров
         jButtonReturn.addActionListener(event);
         
     }

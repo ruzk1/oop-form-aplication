@@ -11,43 +11,43 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class HomePage extends JFrame {
-    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РіР»Р°РІРЅРѕР№ С„РѕСЂРјС‹
+    //Конструктор главной формы
     JLabel jLabelMain;
     JButton jButtonContinue, jButtonExit;
     MyEvent event = new MyEvent();
     HomePage(String s){
-       super(s);//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ JFrame(String s)
+       super(s);//Конструктор JFrame(String s)
        this.setSize(450, 500);
-       //РЎРѕР·РґР°РЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ
-       jButtonContinue = new JButton("Р”Р°Р»РµРµ");
+       //Создание элементов
+       jButtonContinue = new JButton("Далее");
        jButtonContinue.setBackground(new Color(255,255,255));
-       jButtonExit = new JButton("Р’С‹С…РѕРґ");
+       jButtonExit = new JButton("Выход");
        jButtonExit.setBackground(new Color(255,255,255));
        jLabelMain = new JLabel("<html>"
                 + "<div style='text-align: center; padding-top: 20px'>"
-                + "РњРёРЅРёСЃС‚РµСЂСЃС‚РІРѕ РѕР±СЂР°Р·РѕРІР°РЅРёСЏ Р РµСЃРїСѓР±Р»РёРєРё Р‘РµР»Р°СЂСѓСЃСЊ"
-                + "<br>Р РµСЃРїСѓР±Р»РёРєР°РЅСЃРєРёР№ РёРЅСЃС‚РёС‚СѓС‚ РёРЅРЅРѕРІР°С†РёРѕРЅРЅС‹С… С‚РµС…РЅРѕР»РѕРіРёР№"
-                + "<br>РљР°С„РµРґСЂР°: 'РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹Рµ С‚РµС…РЅРѕР»РѕРіРёРё'"
-                + "<br><div style='text-align: center; padding-top: 30px; font-size: 16;'>РљРѕРЅРІРµСЂС‚РѕСЂС‹ РµРґРёРЅРёС† РёР·РјРµСЂРµРЅРёСЏ РїРѕС‚РѕРєР° С‚РµРїР»Р°</div>"
-                + "<br><br>Р Р°СЃС‡С‘С‚РЅРѕ РіСЂР°С„РёС‡РµСЃРєР°СЏ СЂР°Р±РѕС‚Р°"
-                + "<br>РџРѕ РґРёСЃС†РёРїР»РёРЅРµ 'РћР±СЉРµРєС‚РЅРѕ РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅРѕРµ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ'"
-                + "<br><div style='text-align: right; padding-top:80px'>Р’С‹РїРѕР»РЅРёР»:"
-                + "<br>РЎС‚СѓРґРµРЅС‚ РіСЂСѓРїРїС‹ РС‚СЃ-9"
-                + "<br>Р”СЏС‚Р»РѕРІ РЎС‚Р°РЅРёСЃР»Р°РІ РђРЅРґСЂРµРµРІРёС‡</div>"
-                + "<div style='text-align: center; padding-top: 50px'>Р’РёС‚РµР±СЃРє, 2021</div>"
+                + "Министерство образования Республики Беларусь"
+                + "<br>Республиканский институт инновационных технологий"
+                + "<br>Кафедра: 'Информационные технологии'"
+                + "<br><div style='text-align: center; padding-top: 30px; font-size: 16;'>Конверторы единиц измерения потока тепла</div>"
+                + "<br><br>Расчётно графическая работа"
+                + "<br>По дисциплине 'Объектно ориентированное программирование'"
+                + "<br><div style='text-align: right; padding-top:80px'>Выполнил:"
+                + "<br>Студент группы Итс-9"
+                + "<br>Дятлов Станислав Андреевич</div>"
+                + "<div style='text-align: center; padding-top: 50px'>Витебск, 2021</div>"
                 + "</div>"
                 + "</html>");
        jLabelMain.setForeground(new Color(0,0,0));
        Box box = Box.createHorizontalBox();
        JPanel p = new JPanel();     
-       //Р”РѕР±Р°РІР»РµРЅРёРµ РЅР° С„РѕСЂРјСѓ
+       //Добавление на форму
        p.add(jLabelMain);
        box.add(jButtonExit);
        box.add(Box.createHorizontalGlue());
        box.add(jButtonContinue);
        this.add(p,BorderLayout.CENTER);
        this.add(box,BorderLayout.SOUTH);
-       //Р”РѕР±Р°РІР»РµРЅРёРµ Р›РёСЃРµРЅРµСЂРѕРІ
+       //Добавление Лисенеров
         jButtonContinue.addActionListener(event);
         jButtonExit.addActionListener(event);
         
@@ -56,8 +56,8 @@ class HomePage extends JFrame {
     
  public class MyEvent implements ActionListener {
 
- // РџСЂРё РЅР°Р¶Р°С‚РёРё РЅР° РєРЅРѕРїРєСѓ "Р”Р°Р»РµРµ" РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ РіР»Р°РІРЅР°СЏ С„РѕСЂРјР°.
- // РљРЅРѕРїРєР° "Р’С‹С…РѕРґ" РїСЂРµРєСЂР°С‰Р°РµС‚ СЂР°Р±РѕС‚Сѓ РїСЂРёР»РѕР¶РµРЅРёСЏ.
+ // При нажатии на кнопку "Далее" открывается главная форма.
+ // Кнопка "Выход" прекращает работу приложения.
 
         public MyEvent() {
         }

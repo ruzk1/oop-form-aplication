@@ -5,10 +5,10 @@ import javax.swing.JFrame;
 public class Main {
 
     public static void main(String[] args) {
-        //РЎРѕР·РґР°С‘Рј С„РѕСЂРјСѓ
-         HomePage f = new HomePage("РљРѕРЅРІРµСЂС‚РµСЂ");
+        //Создаём форму
+         HomePage f = new HomePage("Конвертер");
         
-        //РќР°СЃС‚СЂР°РёРІР°РµРј РїР°СЂР°РјРµС‚СЂС‹
+        //Настраиваем параметры
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setResizable(false);

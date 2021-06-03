@@ -10,31 +10,31 @@ public class Author extends JFrame {
    Handler event = new Handler();
 
     Author(){
-        //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
-        super("РћР± Р°РІС‚РѕСЂРµ");
+        //Конструктор
+        super("Об авторе");
         this.setSize(400, 500);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        jButtonReturn = new JButton("РќР°Р·Р°Рґ");
+        jButtonReturn = new JButton("Назад");
         jButtonReturn.setBackground(new Color(255,255,255));
          jLabel1 = new JLabel("<html>"
-                + "<div style='text-align: center'>Р“СЂСѓРїРїР° РС‚СЃ-9</div>"
-                + "<div style='text-align: center; padding-top: 30px'>РўРµРјР°: Р Р°Р·СЂР°Р±РѕС‚РєР° РѕР±СЉРµРєС‚РЅРѕ-РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ:  РєРѕРЅРІРµСЂС‚РѕСЂ РµРґРёРЅРёС† РёР·РјРµСЂРµРЅРёСЏ </div>"
-                + "<div style='text-align: center'>Р’Р°СЂРёР°РЅС‚ 8: Р•РґРёРЅРёС†С‹ РёР·РјРµСЂРµРЅРёСЏ РїРѕС‚РѕРєР° С‚РµРїР»Р° (РїРѕС‚РѕРє С‚РµРїР»Р°) </div>"
-                + "<div style='text-align: center; padding-top: 190px'>Р”СЏС‚Р»РѕРІ РЎС‚Р°РЅРёСЃР»Р°РІ РђРЅРґСЂРµРµРІРёС‡"
-                + "<div style='text-align: center'>Р’РёС‚РµР±СЃРє, 2021"
+                + "<div style='text-align: center'>Группа Итс-9</div>"
+                + "<div style='text-align: center; padding-top: 30px'>Тема: Разработка объектно-ориентированного приложения:  конвертор единиц измерения </div>"
+                + "<div style='text-align: center'>Вариант 8: Единицы измерения потока тепла (поток тепла) </div>"
+                + "<div style='text-align: center; padding-top: 190px'>Дятлов Станислав Андреевич"
+                + "<div style='text-align: center'>Витебск, 2021"
                 + "</html>");
         jLabel1.setFont(new Font("arial", Font.BOLD, 16));
         add(jLabel1,BorderLayout.CENTER);
         add(jButtonReturn,BorderLayout.SOUTH);
-        //Р”РѕР±Р°РІР»РµРЅРёРµ Р›РёСЃРµРЅРµСЂРѕРІ
+        //Добавление Лисенеров
         jButtonReturn.addActionListener(event);
     }
     
     public class Handler implements ActionListener {
       @Override
-        //Р’РѕР·РІСЂР°С‚ Рє РіР»Р°РІРЅРѕРјСѓ РѕРєРЅСѓ
+        //Возврат к главному окну
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == jButtonReturn)
                 {
